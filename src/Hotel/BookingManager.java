@@ -4,8 +4,7 @@ import java.util.List;
 import java.util.ArrayList;
 
 public class BookingManager {
-    private final List<Reservation> reservations;
-
+    private static  ArrayList<Reservation> reservations;
 
 
     public BookingManager() {
@@ -16,25 +15,26 @@ public class BookingManager {
         reservations.add(newReservation);
     }
 
-    public List<Reservation> getReservations() {
+    public List<Reservation> getListReservation() {
         return new ArrayList<>(reservations);
     }
 
-    public void getPrintReservation(){
-        for (Reservation reservation : reservations ) {
-            System.out.println("Number of Room: " + reservation.getRoom().getNumberOfRoom());
-            System.out.println("Check-in: " + reservation.getCheckIn());
-            System.out.println("Check-out: " + reservation.getCheckOut());
-            System.out.println("Type of journey: " + reservation.getIsVacation());
 
-            System.out.println("list of Guests: ");
-            for (Guest guest : reservation.getGuests()) {
-                System.out.println("  " + guest.getName() + " " + guest.getSurname());
-            }
-            System.out.println("********************");
+    //Method for retrieving a reservation from an index list
+    public Reservation getBooking(int index) {
+        if (index >= 0 && index < reservations.size()) {
+            return reservations.get(index);
+        } else {
+            return null;
         }
     }
 
+    public void clearReservation() {
+        reservations.clear();
+    }
+    public void removeReservation(Reservation reservation) {
+        reservations.remove(reservation);
+    }
 
 
 

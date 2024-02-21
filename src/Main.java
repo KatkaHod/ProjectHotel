@@ -12,7 +12,7 @@ public class Main {
     public static void main(String[] args) {
 
         //Instances of the Classes: Guest, Room, Reservation and BookingManager
-        BookingManager ReservationList = new BookingManager();
+        BookingManager bookingManager = new BookingManager();
 
         Guest guest1 = new Guest("Adela", "Malikova", LocalDate.of(1993, 3,13));
         Guest guest2 = new Guest("Jan", "Dvorak", LocalDate.of(1995,5,5));
@@ -47,7 +47,7 @@ public class Main {
             System.out.println(guests.getName() + " " + guests.getSurname()+ " " + "(" + guests.getDateOfBirth() + ")");
         }
 
-
+        bookingManager.getAllReservation();
 
 
 
