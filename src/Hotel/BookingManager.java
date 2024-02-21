@@ -7,17 +7,20 @@ public class BookingManager {
     private final List<Reservation> reservations;
 
 
-    //constructor
+
     public BookingManager() {
         this.reservations = new ArrayList<>();
     }
 
-    //method add reservation
-    public void addReservation(Reservation reservation){
-        reservations.add(reservation);
+    public void addReservation(Reservation newReservation){
+        reservations.add(newReservation);
     }
 
-    public void getBookings(){
+    public List<Reservation> getReservations() {
+        return new ArrayList<>(reservations);
+    }
+
+    public void getPrintReservation(){
         for (Reservation reservation : reservations ) {
             System.out.println("Number of Room: " + reservation.getRoom().getNumberOfRoom());
             System.out.println("Check-in: " + reservation.getCheckIn());
@@ -31,20 +34,7 @@ public class BookingManager {
             System.out.println("********************");
         }
     }
-    public void clearBookings() {
-    }
 
-    public void getNumberOfWorkingBookings() {
-
-    }
-
-
-    public void getNumberOfGuests() {
-
-    }
-    public void getAverageGuests() {
-
-    }
 
 
 

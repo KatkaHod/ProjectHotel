@@ -15,7 +15,7 @@ public class Main {
         BookingManager ReservationList = new BookingManager();
 
         Guest guest1 = new Guest("Adela", "Malikova", LocalDate.of(1993, 3,13));
-        Guest guest2 = new Guest("Jan", "Dvoracek", LocalDate.of(1995,5,5));
+        Guest guest2 = new Guest("Jan", "Dvorak", LocalDate.of(1995,5,5));
 
 
         Room room1 = new Room(1,1,BigDecimal.valueOf(1000),true,true);
@@ -46,6 +46,9 @@ public class Main {
         for (Guest guests : guestsList ) {
             System.out.println(guests.getName() + " " + guests.getSurname()+ " " + "(" + guests.getDateOfBirth() + ")");
         }
+
+
+
 
 
 
