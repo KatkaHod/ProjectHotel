@@ -4,37 +4,37 @@ import java.util.List;
 import java.util.ArrayList;
 
 public class BookingManager {
-    private static  ArrayList<Reservation> reservations;
+
+    //Atribut
+    private List<Reservation> reservations = new ArrayList<>();
 
 
-    public BookingManager() {
-        this.reservations = new ArrayList<>();
+    //Add a reservation to the list
+    public void addBooking(Reservation reservation) {
+        reservations.add(reservation);
     }
 
-    public void addReservation(Reservation newReservation){
-        reservations.add(newReservation);
-    }
-
-    public List<Reservation> getListReservation() {
-        return new ArrayList<>(reservations);
-    }
-
-
-    //Method for retrieving a reservation from an index list
+    //Get a 'reservation' with a given index from the list
     public Reservation getBooking(int index) {
         if (index >= 0 && index < reservations.size()) {
             return reservations.get(index);
         } else {
+            System.out.println("Invalid index.");
             return null;
         }
     }
 
-    public void clearReservation() {
+   //Get the list of the reservations
+   public List<Reservation> getReservations() {
+       return reservations;
+   }
+
+    //Delete the list of reservations
+    public void clearReservations() {
         reservations.clear();
     }
-    public void removeReservation(Reservation reservation) {
-        reservations.remove(reservation);
-    }
+
+
 
 
 

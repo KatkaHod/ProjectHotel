@@ -47,7 +47,7 @@ public class Main {
             System.out.println(guests.getName() + " " + guests.getSurname()+ " " + "(" + guests.getDateOfBirth() + ")");
         }
 
-        bookingManager.getAllReservation();
+
 
 
 
