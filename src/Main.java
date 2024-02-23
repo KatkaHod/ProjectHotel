@@ -11,6 +11,8 @@ import Hotel.Room;
 public class Main {
     public static void main(String[] args) {
 
+        //create test data
+
         //Instances of the Classes: Guest, Room, Reservation and BookingManager
         BookingManager bookingManager = new BookingManager();
 
