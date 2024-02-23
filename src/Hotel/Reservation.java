@@ -20,6 +20,15 @@ public class Reservation {
         this.guests = guests;
     }
 
+    //get number of guests
+    public int getNumberOfGuests() {
+        if (guests != null) {
+            return guests.size();
+        } else {
+            return 0; // If the list is null, return 0
+        }
+    }
+
     public void setGuests(ArrayList<Guest> guests) {
         this.guests = guests;
     }

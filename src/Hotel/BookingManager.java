@@ -2,15 +2,19 @@ package Hotel;
 
 import java.util.List;
 import java.util.ArrayList;
+import Hotel.Reservation;
 
 public class BookingManager {
 
     //Atribut
     private List<Reservation> reservations = new ArrayList<>();
 
+    //Constructor
+    public BookingManager() {this.reservations = new ArrayList<>();}
+
 
     //Add a reservation to the list
-    public void addBooking(Reservation reservation) {
+    public void addReservation(Reservation reservation) {
         reservations.add(reservation);
     }
 
@@ -35,8 +39,30 @@ public class BookingManager {
     }
 
 
+    //Number of bookings for business stay - where getIsVacation is NOT true
+    public int getNumberOfWorkingReservations() {
+        int count = 0;
+        for (Reservation reservation : reservations) {
+            if (!reservation.getIsVacation()) {
+                count++;
+            }
+        }
+        return count;
+    }
 
 
+    //Goes through all reservations and returns the average number of guests per reservation as a result.
+    public double getAverageGuests() {
+        if (reservations == null || reservations.isEmpty()) {
+            return 0.0; // Return 0 if there are no reservations
+        }
+        int totalGuests = 0;
+        for (Reservation reservation : reservations) {
+            totalGuests += reservation.getNumberOfGuests();
+        }
+
+        return (double) totalGuests / reservations.size();
+    }
 
 
 }
