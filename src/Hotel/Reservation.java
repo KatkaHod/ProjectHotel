@@ -1,5 +1,6 @@
 package Hotel;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -9,6 +10,7 @@ public class Reservation {
     private LocalDate checkOut;
     private boolean isVacation;
     private Room room;
+    private Guest guest;
     private List<Guest> guests;
 
 
@@ -19,6 +21,19 @@ public class Reservation {
         this.isVacation = isVacation;
         this.guests = guests;
     }
+
+    public LocalDate getGuestDateOfBirth() {
+        return guest.getDateOfBirth();
+    }
+
+    public BigDecimal getPricePerNight() {
+        return room.getPricePerNight();
+    }
+
+    public boolean getViewSea() {
+        return room.getViewSea();
+    }
+
 
     //get number of guests
     public int getNumberOfGuests() {
@@ -32,6 +47,11 @@ public class Reservation {
     public void setGuests(ArrayList<Guest> guests) {
         this.guests = guests;
     }
+
+    public int getCountGuests() {
+        return guests.size();
+    }
+
     public List<Guest> getGuests() {
         return guests;
     }

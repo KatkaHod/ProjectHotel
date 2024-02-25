@@ -67,7 +67,6 @@ public class Main {
         listReservation.add(reservation12);
         listReservation.add(reservation13);
 
-
         for (Guest guests : guestsList ) {
             System.out.println("New guest");
             System.out.println(guests.getName() + " "
@@ -87,13 +86,19 @@ public class Main {
 
         System.out.println();
 
+
+        //Print all the reservation
         for (Reservation reservations : listReservation ) {
             System.out.println("New reservations");
-            System.out.println(reservations.getGuests() + " "
-                    + reservations.getRoom() + " "
-                    + "(" + reservations.getCheckIn() + " "
-                    + reservations.getCheckOut() );
+            System.out.println(reservations.getCheckIn() + " till " + reservations.getCheckOut() + ": "
+                    + reservations.getGuests() + " " +
+                    "[" + reservations.getCountGuests() + ", " + reservations.getViewSea() + "]" + " price " + reservations.getPricePerNight() + "CZK"
+            );
         }
+
+        // Cannot add this: + "(" + reservations.getGuestDateOfBirth()+ ")" +
+
+
 
 
 

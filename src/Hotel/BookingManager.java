@@ -2,7 +2,6 @@ package Hotel;
 
 import java.util.List;
 import java.util.ArrayList;
-import Hotel.Reservation;
 
 public class BookingManager {
 
@@ -63,6 +62,7 @@ public class BookingManager {
 
         return (double) totalGuests / reservations.size();
     }
+
 
 
 

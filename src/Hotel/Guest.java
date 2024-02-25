@@ -10,7 +10,7 @@ public class Guest {
     private String surname;
     private LocalDate dateOfBirth;
 
-    //Constructor with parameters
+    //Constructor with parameters, setting the initial value)
     public Guest(String name, String surname, LocalDate dateOfBirth) {
         this.name = name;
         this.surname = surname;
