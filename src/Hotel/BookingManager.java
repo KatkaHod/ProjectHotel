@@ -63,6 +63,23 @@ public class BookingManager {
         return (double) totalGuests / reservations.size();
     }
 
+    //The first 8 recreational reservations
+    public void printRecreations () {
+        int count=0;
+        System.out.println("Rekreační rezervace: ");
+        for (Reservation reservation : reservation.getVacationStay) {
+            if (count >=8){
+                break;
+            }
+            System.out.println(reservation);
+            count++;
+        }
+    }
+
+
+
+
+
 
 }
 

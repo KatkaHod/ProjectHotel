@@ -47,7 +47,7 @@ public class Main {
 
 
 
-        //Print all the reservation
+        System.out.println("-------Reservations-------");
         for (Reservation reservations : bookingManager.getReservations()) {
             System.out.println(reservations.getCheckIn() + " till " + reservations.getCheckOut() + ": "
                     + reservations.getGuests() + " " +
@@ -55,8 +55,16 @@ public class Main {
             );
         }
 
+        System.out.println();
+
+
+        System.out.println("-------Statistics-------");
 
         System.out.println();
+        System.out.println("The first 8 recreational reservation");
+
+
+
 
 
     }

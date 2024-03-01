@@ -22,6 +22,8 @@ public class Reservation {
         this.guests = guests;
     }
 
+
+
     public LocalDate getGuestDateOfBirth() {
         return guest.getDateOfBirth();
     }
@@ -79,6 +81,12 @@ public class Reservation {
     public void setIsVacation(boolean vacation) {
         isVacation = vacation;
     }
+
+    public String getIsPrivateVacation() {
+        return isVacation ? "recreational" : "business";
+    }
+
+
 
     public Room getRoom() {
         return room;
