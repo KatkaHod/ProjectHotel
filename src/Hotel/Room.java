@@ -2,7 +2,6 @@ package Hotel;
 
 import java.math.BigDecimal;
 
-
 public class Room {
 
     private int countBed;
@@ -12,7 +11,7 @@ public class Room {
     private boolean viewSea; //True - yes, False - not
 
 
-    public Room(int numberOfBeds, int numberOfRoom,BigDecimal pricePerNight ,boolean includesBalcony, boolean viewSea) {
+    public Room(int numberOfBeds, int numberOfRoom, BigDecimal pricePerNight, boolean includesBalcony, boolean viewSea) {
         this.countBed = countBed;
         this.numberOfRoom = numberOfRoom;
         this.pricePerNight = pricePerNight;

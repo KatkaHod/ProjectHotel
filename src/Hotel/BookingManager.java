@@ -8,17 +8,14 @@ public class BookingManager {
     //Atribut
     private List<Reservation> reservations = new ArrayList<>();
 
-    //Constructor
-    public BookingManager() {this.reservations = new ArrayList<>();}
 
-
-    //Add a reservation to the list
-    public void addReservation(Reservation reservation) {
-        reservations.add(reservation);
+    //1. add a reservation to the list
+    public void addReservation(Reservation newReservation) {
+        reservations.add(newReservation);
     }
 
-    //Get a 'reservation' with a given index from the list
-    public Reservation getBooking(int index) {
+    //2. get a 'reservation' with a given index from the list
+    public Reservation getReservationIndex(int index) {
         if (index >= 0 && index < reservations.size()) {
             return reservations.get(index);
         } else {
@@ -27,16 +24,18 @@ public class BookingManager {
         }
     }
 
-   //Get the list of the reservations
-   public List<Reservation> getReservations() {
-       return reservations;
-   }
+    // 3. get a list of reservations
+    public List<Reservation> getReservations() {
+        return new ArrayList<>(reservations);
+    }
 
-    //Delete the list of reservations
+
+    // 4. delete list of reservation
     public void clearReservations() {
         reservations.clear();
     }
 
+    //statistics methods
 
     //Number of bookings for business stay - where getIsVacation is NOT true
     public int getNumberOfWorkingReservations() {
@@ -62,10 +61,6 @@ public class BookingManager {
 
         return (double) totalGuests / reservations.size();
     }
-
-
-
-
 
 
 }

@@ -11,6 +11,7 @@ import Hotel.Room;
 public class Main {
     public static void main(String[] args) {
 
+
         //------Rooms------
         List<Room> roomsList = new ArrayList<>();
         Room room1 = new Room(1,1,BigDecimal.valueOf(1000),true,true);
@@ -22,6 +23,7 @@ public class Main {
 
         //------Guests--------
         List<Guest> guestsList = new ArrayList<>();
+
         Guest guest1 = new Guest("Karel", "Dvorak", LocalDate.of(1990, 5,15));
         Guest guest2 = new Guest("Karel", "Dvorak",LocalDate.of(1979,1,3));
         Guest guest3 = new Guest("Karolina", "Tmava", LocalDate.of(1993,2,10));
@@ -95,6 +97,15 @@ public class Main {
                     "[" + reservations.getCountGuests() + ", " + reservations.getViewSea() + "]" + " price " + reservations.getPricePerNight() + "CZK"
             );
         }
+
+
+
+        System.out.println();
+
+
+
+
+
 
         // Cannot add this: + "(" + reservations.getGuestDateOfBirth()+ ")" +
 

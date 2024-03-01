@@ -91,13 +91,15 @@ public class Reservation {
     @Override
     public String toString() {
         return "Reservation {" +
-                "checkIn=" + checkIn +
-                ", checkOut=" + checkOut +
-                ", isVacation=" + isVacation +
-                ", room=" + room +
-                ", guests=" + guests +
+                "checkIn = " + checkIn +
+                ", checkOut = " + checkOut +
+                ", isVacation = " + isVacation +
+                ", room = " + room +
+                ", guests = " + guests +
                 '}';
     }
+
+
 
 
 }
