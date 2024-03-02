@@ -3,6 +3,7 @@ package Hotel;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.ArrayList;
+import java.time.format.DateTimeFormatter;
 
 public class BookingManager {
 
@@ -39,42 +40,59 @@ public class BookingManager {
     //statistics methods
 
     //Number of bookings for business stay - where getIsVacation is NOT true
-    public int getNumberOfWorkingReservations() {
-        int count = 0;
+    public int getNumberOfWorkingBookings() {
+        int workingStay = 0;
         for (Reservation reservation : reservations) {
             if (!reservation.getIsVacation()) {
-                count++;
+                workingStay++;
             }
         }
-        return count;
+        return workingStay;
     }
 
 
-    //Goes through all reservations and returns the average number of guests per reservation as a result.
+    // Average number of guests per booking
     public double getAverageGuests() {
-        if (reservations == null || reservations.isEmpty()) {
-            return 0.0; // Return 0 if there are no reservations
-        }
-        int totalGuests = 0;
+        double totalGuests = 0;
+        double totalReservations = 0;
+
         for (Reservation reservation : reservations) {
             totalGuests += reservation.getNumberOfGuests();
+            totalReservations++;
         }
 
-        return (double) totalGuests / reservations.size();
+        if (totalReservations == 0) {
+            return 0;
+        } else {
+            return totalGuests / totalReservations;
+        }
+
     }
 
     //The first 8 recreational reservations
-    public void printRecreations () {
-        int count=0;
-        System.out.println("Rekreační rezervace: ");
-        for (Reservation reservation : reservation.getVacationStay) {
-            if (count >=8){
-                break;
+    public List<Reservation> printFirstEightVacation() {
+        System.out.println("\nList of first eight vacation reservations:");
+        int count = 0;
+        for (Reservation reservation : reservations) {
+            if (count >= 8) {
+                break; //  Exit loop at value 8
             }
-            System.out.println(reservation);
-            count++;
+            if (reservation.getIsVacation()) {
+                reservation.getGuests().forEach(guest -> {
+                    System.out.printf("%s - %s :%s %s (%s)[%d, %s] for %sCzk\n",
+                            reservation.getCheckIn(), reservation.getCheckOut(), guest.getName(), guest.getSurname(), guest.getDateOfBirth(),
+                            reservation.getNumberOfGuests(), reservation.getRoom().getViewSea() ? "yes" : "no", reservation.getTotalPrice());
+                });
+
+                count++;
+            }
         }
+        return null;
     }
+
+    //Statistics by count of guests
+
+
 
 
 

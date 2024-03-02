@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.time.temporal.ChronoUnit;
 
 public class Reservation {
     private LocalDate checkIn;
@@ -23,6 +24,17 @@ public class Reservation {
     }
 
 
+    //Count of night per reservation
+    public long getBookingLength(){
+        return ChronoUnit.DAYS.between(checkIn, checkOut);
+    }
+
+    //get total price of reservations
+    public BigDecimal getTotalPrice() {
+        long nights = getBookingLength();
+        BigDecimal price = room.getPricePerNight();
+        return price.multiply(BigDecimal.valueOf(nights));
+    }
 
     public LocalDate getGuestDateOfBirth() {
         return guest.getDateOfBirth();
@@ -37,22 +49,25 @@ public class Reservation {
     }
 
 
-    //get number of guests
+    //get list of guests
+    public List<Guest> getListOfGuests() {
+        return new ArrayList<>();
+
+    }
+
     public int getNumberOfGuests() {
         if (guests != null) {
             return guests.size();
         } else {
-            return 0; // If the list is null, return 0
+            return 0;
         }
     }
+
 
     public void setGuests(ArrayList<Guest> guests) {
         this.guests = guests;
     }
 
-    public int getCountGuests() {
-        return guests.size();
-    }
 
     public List<Guest> getGuests() {
         return guests;
