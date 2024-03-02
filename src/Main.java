@@ -51,17 +51,26 @@ public class Main {
         for (Reservation reservations : bookingManager.getReservations()) {
             System.out.println(reservations.getCheckIn() + " till " + reservations.getCheckOut() + ": "
                     + reservations.getGuests() + " " +
-                    "[" + reservations.getCountGuests() + ", " + reservations.getViewSea() + "]" + " per " + reservations.getPricePerNight() + " CZK"
+                    "[" + reservations.getNumberOfGuests() + ", " + reservations.getViewSea() + "]" + " per " + reservations.getPricePerNight() + " CZK"
             );
         }
 
         System.out.println();
+        System.out.println("-------Guests statistics-------");
 
 
-        System.out.println("-------Statistics-------");
-
+        System.out.println("First 8 Vacation stay: ");
+        bookingManager.printFirstEightVacation();
         System.out.println();
-        System.out.println("The first 8 recreational reservation");
+
+        System.out.println("Statistics by number of guests: ");
+        bookingManager.printGuestStatistics();
+        System.out.println();
+
+
+        System.out.println("Price of reservation: ");
+        //finish pocet noci na pobyt a cena rezervace a souhrn
+
 
 
 

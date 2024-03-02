@@ -90,7 +90,29 @@ public class BookingManager {
         return null;
     }
 
-    //Statistics by count of guests
+    //Statistics of guests
+
+
+    //statistics about the number of guests in a reservation
+    public void printGuestStatistics() {
+        int bookingsWithOneGuest = 0;
+        int bookingsWithTwoGuests = 0;
+        int bookingsWithMoreThanTwoGuests = 0;
+
+        for (Reservation reservation : reservations) {
+            int numberOfGuests = reservation.getNumberOfGuests();
+            if (numberOfGuests == 1) {
+                bookingsWithOneGuest++;
+            } else if (numberOfGuests == 2) {
+                bookingsWithTwoGuests++;
+            } else {
+                bookingsWithMoreThanTwoGuests++;
+            }
+        }
+        System.out.println("Reservations with 1 guest: " + bookingsWithOneGuest);
+        System.out.println("Reservations with 2 guests: " + bookingsWithTwoGuests);
+        System.out.println("Reservations with more than 2 guests: " + bookingsWithMoreThanTwoGuests);
+    }
 
 
 
