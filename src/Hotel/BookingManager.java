@@ -12,6 +12,7 @@ public class BookingManager {
     //variable to have access to class reservation methods
     Reservation reservation;
 
+
     //Atribut
     private List<Reservation> reservations = new ArrayList<>();
 
@@ -123,8 +124,10 @@ public class BookingManager {
 
     //Get total price of every reservation
     public void getTotalPrices() {
+        int numbers = 1;
         for (Reservation reservation : reservations) {
-            System.out.println("Total price for reservation: " + reservation.getTotalPrice() + " CZK ");
+            System.out.println(numbers + ". " + "Total price for reservation: " + reservation.getTotalPrice() + " CZK ");
+            numbers++;
         }
 
     }
