@@ -1,11 +1,16 @@
 package Hotel;
 
+import java.math.BigDecimal;
+import java.sql.SQLOutput;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.ArrayList;
 import java.time.format.DateTimeFormatter;
 
 public class BookingManager {
+
+    //variable to have access to class reservation methods
+    Reservation reservation;
 
     //Atribut
     private List<Reservation> reservations = new ArrayList<>();
@@ -114,6 +119,15 @@ public class BookingManager {
         System.out.println("Reservations with more than 2 guests: " + bookingsWithMoreThanTwoGuests);
     }
 
+
+
+    //Get total price of every reservation
+    public void getTotalPrices() {
+        for (Reservation reservation : reservations) {
+            System.out.println("Total price for reservation: " + reservation.getTotalPrice() + " CZK ");
+        }
+
+    }
 
 
 

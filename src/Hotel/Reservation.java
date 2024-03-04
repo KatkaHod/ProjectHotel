@@ -25,7 +25,7 @@ public class Reservation {
 
 
     //Count of night per reservation
-    public long getBookingLength(){
+    public long getBookingLength() {
         return ChronoUnit.DAYS.between(checkIn, checkOut);
     }
 

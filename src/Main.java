@@ -11,6 +11,7 @@ import Hotel.Room;
 public class Main {
     public static void main(String[] args) {
 
+
         //------Rooms------
         Room room2 = new Room(1,2, BigDecimal.valueOf(1000),true,true);
         Room room3 = new Room(3, 3, BigDecimal.valueOf(2400),false, true);
@@ -69,7 +70,11 @@ public class Main {
 
 
         System.out.println("Price of reservation: ");
-        //finish pocet noci na pobyt a cena rezervace a souhrn
+        bookingManager.getTotalPrices();
+        System.out.println();
+
+
+
 
 
 

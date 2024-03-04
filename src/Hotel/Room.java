@@ -24,6 +24,7 @@ public class Room {
 
     }
 
+
     //Getters and setters methods
     public void setNumberOfBeds(int numberOfBeds){
         this.countBed = numberOfBeds;
