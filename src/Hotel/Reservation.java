@@ -15,13 +15,18 @@ public class Reservation {
     private List<Guest> guests;
 
 
+    //Constructor - reservations with one or multiple guests
     public Reservation(List<Guest> guests, Room room, LocalDate checkIn, LocalDate checkOut, boolean isVacation) {
+        if (guests == null) {
+            throw new IllegalArgumentException("Reservation cannot be made without at least one guest.");
+        }
         this.room = room;
         this.checkIn = checkIn;
         this.checkOut = checkOut;
         this.isVacation = isVacation;
         this.guests = guests;
     }
+
 
 
     //Count of night per reservation
