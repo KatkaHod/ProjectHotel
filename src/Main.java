@@ -58,10 +58,16 @@ public class Main {
 
         System.out.println();
         System.out.println("-------Guests statistics-------");
+        System.out.println();
+
+        System.out.println("Average number of guests per booking: ");
+        System.out.println("First version: " + bookingManager.getAverageGuests());
+        System.out.println("Second version: " + bookingManager.getAverageGuestsSecondMethod());
+        System.out.println();
 
 
-        System.out.println("First 8 Vacation stay: ");
-        bookingManager.printFirstEightVacation();
+        System.out.println("Total price of first 8 recreational reservation: ");
+        bookingManager.printFirst8Vacation();
         System.out.println();
 
         System.out.println("Statistics by number of guests: ");

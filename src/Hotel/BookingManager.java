@@ -1,11 +1,7 @@
 package Hotel;
 
-import java.math.BigDecimal;
-import java.sql.SQLOutput;
-import java.time.LocalDate;
 import java.util.List;
 import java.util.ArrayList;
-import java.time.format.DateTimeFormatter;
 
 public class BookingManager {
 
@@ -18,7 +14,7 @@ public class BookingManager {
         reservations.add(newReservation);
     }
 
-    //2. get a 'reservation' with a given index from the list (for ex. 0,1,3,3 reservation)
+    //2. get a 'reservation' with a given index from the list (for ex. 0,1,2,3 reservation)
     public Reservation getReservationIndex(int index) {
         if (index >= 0 && index < reservations.size()) {
             return reservations.get(index);
@@ -52,7 +48,7 @@ public class BookingManager {
     }
 
 
-    // Average number of guests per booking
+    // Average number of guests per booking - first version
     public double getAverageGuests() {
         double totalGuests = 0;
         double totalReservations = 0;
@@ -70,8 +66,27 @@ public class BookingManager {
 
     }
 
-    //The first 8 recreational reservations
-    public List<Reservation> printFirstEightVacation() {
+    //Average number of guests per booking - second version
+    public double getAverageGuestsSecondMethod() {
+        int totalReservations = reservations.size();
+
+        if (totalReservations == 0) {
+            return 0;
+        }
+        double totalGuests = 0;
+
+        for (Reservation reservation : reservations) {
+            totalGuests += reservation.getNumberOfGuests();
+        }
+
+        return totalGuests / totalReservations;
+
+    }
+
+
+
+    //The first 8 reservation where isVacation() is true
+    public void printFirst8Vacation() {
         int count = 0;
         for (Reservation reservation : reservations) {
             if (count >= 8) {
@@ -87,8 +102,8 @@ public class BookingManager {
                 count++;
             }
         }
-        return null;
     }
+
 
     //Statistics of guests
 
