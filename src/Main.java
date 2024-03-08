@@ -34,22 +34,19 @@ public class Main {
 
 
 
-
-
-        //Clients on behalf of Karolina Tmava - created reservation without for cycle
+        //Clients on behalf of Karolina Tmava - created reservation without cycle
         //bookingManager.addReservation(new Reservation(List.of(guest3),room2,LocalDate.of(2023,8,1),LocalDate.of(2023,8,2),true));
         //bookingManager.addReservation(new Reservation(List.of(guest3),room2,LocalDate.of(2023,8,3),LocalDate.of(2023,8,4),true));
         //bookingManager.addReservation(new Reservation(List.of(guest3),room2,LocalDate.of(2023,8,5),LocalDate.of(2023,8,6),true));
         //bookingManager.addReservation(new Reservation(List.of(guest3),room2,LocalDate.of(2023,8,7),LocalDate.of(2023,8,8),true));
         //bookingManager.addReservation(new Reservation(List.of(guest3),room2,LocalDate.of(2023,8,9),LocalDate.of(2023,8,10),true));
-
         //bookingManager.addReservation(new Reservation(List.of(guest3),room2,LocalDate.of(2023,8,11),LocalDate.of(2023,8,12),true));
         //bookingManager.addReservation(new Reservation(List.of(guest3),room2,LocalDate.of(2023,8,13),LocalDate.of(2023,8,14),true));
         //bookingManager.addReservation(new Reservation(List.of(guest3),room2,LocalDate.of(2023,8,15),LocalDate.of(2023,8,16),true));
         //bookingManager.addReservation(new Reservation(List.of(guest3),room2,LocalDate.of(2023,8,17),LocalDate.of(2023,8,18),true));
         //bookingManager.addReservation(new Reservation(List.of(guest3),room2,LocalDate.of(2023,8,19),LocalDate.of(2023,8,20),true));
 
-        //Clients on behalf Karolina Tmava/Guest3, room2, isVacation:true, in cycle.
+        //Clients on behalf Karolina Tmava in for CYCLE. Guest3, room2, isVacation:true
         for (int i = 0; i < 10; i++) {
             LocalDate checkIn = LocalDate.of(2023, 8, 2 * i + 1);
             LocalDate checkOut = LocalDate.of(2023, 8, 2 * i + 2);
@@ -59,7 +56,7 @@ public class Main {
         }
 
 
-
+        //create reservation for every guest
         System.out.println("-------Reservations-------");
         for (Reservation reservations : bookingManager.getReservations()) {
             System.out.println(reservations.getCheckIn() + " till " + reservations.getCheckOut() + ": "
@@ -72,45 +69,47 @@ public class Main {
         System.out.println("-------Guests statistics-------");
         System.out.println();
 
+
+        //print the reservation based on index
+        System.out.println("Get a reservation from the index: ");
+        System.out.println("Reservation index 0: " + bookingManager.getReservationIndex(0));
+        System.out.println("Reservation index 1: " + bookingManager.getReservationIndex(1));
+        System.out.println("Reservation index 2: " + bookingManager.getReservationIndex(2));
+        System.out.println("Reservation index 3: " + bookingManager.getReservationIndex(3));
+        System.out.println("Reservation index 4: " + bookingManager.getReservationIndex(4));
+        System.out.println();
+
+        //print the average number of guests per booking, two methods created - keep it for future needed
         System.out.println("Average number of guests per booking: ");
         System.out.println("First version: " + bookingManager.getAverageGuests());
         System.out.println("Second version: " + bookingManager.getAverageGuestsSecondMethod());
         System.out.println();
 
-
-        System.out.println("Total price of first 8 recreational reservation: ");
-        bookingManager.printFirst8Vacation();
+        //Reservation is business stay - isVacation() not true
+        System.out.println("Reservation where isVacation false - Business stay: ");
+        System.out.println("Count of business stay: " + bookingManager.getNumberOfWorkingBookings());
         System.out.println();
 
+        //Print the reservation with one, two or more than 2 guests
         System.out.println("Statistics by number of guests: ");
         bookingManager.printGuestStatistics();
         System.out.println();
 
+        //Print the total price of first created 8 recreational reservation
+        System.out.println("Total price of first 8 recreational reservation: ");
+        bookingManager.printFirst8Vacation();
+        System.out.println();
 
-        System.out.println("Price of reservation: ");
+        //Total price of every reservation. Price per night * lenght of night stay
+        System.out.println("Total price of the order: ");
         bookingManager.getTotalPrices();
         System.out.println();
 
 
+        //clear the reservation,then return list and verify if the list is clear
+        System.out.println("Clear the reservation: if return nothing - correct ");
         bookingManager.clearReservations();
-        System.out.println();
-
-
-
-
-
-        //others method
-
-
-
-
-
-
-
-
-
-
-
+        System.out.println(bookingManager.getReservations());
 
     }
 
