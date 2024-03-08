@@ -9,10 +9,6 @@ import java.time.format.DateTimeFormatter;
 
 public class BookingManager {
 
-    //variable to have access to class reservation methods
-    Reservation reservation;
-
-
     //Atribut
     private List<Reservation> reservations = new ArrayList<>();
 
@@ -22,13 +18,12 @@ public class BookingManager {
         reservations.add(newReservation);
     }
 
-    //2. get a 'reservation' with a given index from the list
+    //2. get a 'reservation' with a given index from the list (for ex. 0,1,3,3 reservation)
     public Reservation getReservationIndex(int index) {
         if (index >= 0 && index < reservations.size()) {
             return reservations.get(index);
         } else {
-            System.out.println("Invalid index.");
-            return null;
+            throw new IllegalArgumentException("Invalid index");
         }
     }
 
@@ -77,7 +72,6 @@ public class BookingManager {
 
     //The first 8 recreational reservations
     public List<Reservation> printFirstEightVacation() {
-        System.out.println("\nList of first eight vacation reservations:");
         int count = 0;
         for (Reservation reservation : reservations) {
             if (count >= 8) {

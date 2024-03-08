@@ -74,6 +74,19 @@ public class Main {
         System.out.println();
 
 
+        bookingManager.clearReservations();
+        System.out.println();
+
+
+
+
+
+        //others method
+
+
+
+
+
 
 
 
