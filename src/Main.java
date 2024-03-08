@@ -33,18 +33,30 @@ public class Main {
         bookingManager.addReservation(new Reservation(List.of(guest3),room3,LocalDate.of(2023,8,1),LocalDate.of(2023,8,31),true));
 
 
-        //Clients on behalf of Karolina Tmava
-        bookingManager.addReservation(new Reservation(List.of(guest3),room2,LocalDate.of(2023,8,1),LocalDate.of(2023,8,2),true));
-        bookingManager.addReservation(new Reservation(List.of(guest3),room2,LocalDate.of(2023,8,3),LocalDate.of(2023,8,4),true));
-        bookingManager.addReservation(new Reservation(List.of(guest3),room2,LocalDate.of(2023,8,5),LocalDate.of(2023,8,6),true));
-        bookingManager.addReservation(new Reservation(List.of(guest3),room2,LocalDate.of(2023,8,7),LocalDate.of(2023,8,8),true));
-        bookingManager.addReservation(new Reservation(List.of(guest3),room2,LocalDate.of(2023,8,9),LocalDate.of(2023,8,10),true));
 
-        bookingManager.addReservation(new Reservation(List.of(guest3),room2,LocalDate.of(2023,8,11),LocalDate.of(2023,8,12),true));
-        bookingManager.addReservation(new Reservation(List.of(guest3),room2,LocalDate.of(2023,8,13),LocalDate.of(2023,8,14),true));
-        bookingManager.addReservation(new Reservation(List.of(guest3),room2,LocalDate.of(2023,8,15),LocalDate.of(2023,8,16),true));
-        bookingManager.addReservation(new Reservation(List.of(guest3),room2,LocalDate.of(2023,8,17),LocalDate.of(2023,8,18),true));
-        bookingManager.addReservation(new Reservation(List.of(guest3),room2,LocalDate.of(2023,8,19),LocalDate.of(2023,8,20),true));
+
+
+        //Clients on behalf of Karolina Tmava - created reservation without for cycle
+        //bookingManager.addReservation(new Reservation(List.of(guest3),room2,LocalDate.of(2023,8,1),LocalDate.of(2023,8,2),true));
+        //bookingManager.addReservation(new Reservation(List.of(guest3),room2,LocalDate.of(2023,8,3),LocalDate.of(2023,8,4),true));
+        //bookingManager.addReservation(new Reservation(List.of(guest3),room2,LocalDate.of(2023,8,5),LocalDate.of(2023,8,6),true));
+        //bookingManager.addReservation(new Reservation(List.of(guest3),room2,LocalDate.of(2023,8,7),LocalDate.of(2023,8,8),true));
+        //bookingManager.addReservation(new Reservation(List.of(guest3),room2,LocalDate.of(2023,8,9),LocalDate.of(2023,8,10),true));
+
+        //bookingManager.addReservation(new Reservation(List.of(guest3),room2,LocalDate.of(2023,8,11),LocalDate.of(2023,8,12),true));
+        //bookingManager.addReservation(new Reservation(List.of(guest3),room2,LocalDate.of(2023,8,13),LocalDate.of(2023,8,14),true));
+        //bookingManager.addReservation(new Reservation(List.of(guest3),room2,LocalDate.of(2023,8,15),LocalDate.of(2023,8,16),true));
+        //bookingManager.addReservation(new Reservation(List.of(guest3),room2,LocalDate.of(2023,8,17),LocalDate.of(2023,8,18),true));
+        //bookingManager.addReservation(new Reservation(List.of(guest3),room2,LocalDate.of(2023,8,19),LocalDate.of(2023,8,20),true));
+
+        //Clients on behalf Karolina Tmava/Guest3, room2, isVacation:true, in cycle.
+        for (int i = 0; i < 10; i++) {
+            LocalDate checkIn = LocalDate.of(2023, 8, 2 * i + 1);
+            LocalDate checkOut = LocalDate.of(2023, 8, 2 * i + 2);
+
+            bookingManager.addReservation(new Reservation(
+                    List.of(guest3), room2, checkIn, checkOut, true));
+        }
 
 
 
