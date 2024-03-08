@@ -1,7 +1,7 @@
 *********HOTEL reservation System***********
 
 ProjectHotel is a reservation system. It allows create a reservation at least for one guest.
-Every reservation contains these information - name and surname, mumber of room, check in and check out, isVacation - true, false.
+Every reservation contains these information - name and surname, number of room, check in and check out, isVacation - true, false.
 
 -> CLasses:
 BookingManager - It contains list of Reservations. Methods are created based on the List.
